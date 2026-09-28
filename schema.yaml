@@ -1,0 +1,42 @@
+description: >
+  Current conditions with the temperature unchanged, wind speed and
+  gusts on the line under it (the old pressure size), and humidity
+  at the bottom.  Pressure and feels-like are not drawn.
+
+settings:
+
+  conditions-provider:
+    is: provider
+    provides: [conditions]
+    required: true
+    help: The provider the current conditions come from.
+
+  layout:
+    is: block
+    help: Where each part sits inside the region, as fractions of it.
+    of:
+      wxicon:
+        is: part
+        help: The picture of the sky.
+      wxdesc:
+        is: part
+        help: The sky in words.
+      temper:
+        is: part
+        help: The temperature.
+      wind:
+        is: part
+        help: Wind direction, speed, and gusts.
+      humidity:
+        is: part
+        help: The relative humidity.
+      wdate:
+        is: part
+        help: When the observation was made, and the source's name.
+
+  observed-format:
+    is: strftime
+    help: How the time of the observation is written.
+  icons-folder:
+    is: string
+    help: The set of weather pictures drawn.

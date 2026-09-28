@@ -1,0 +1,15 @@
+kind: current-wind
+
+conditions-provider: ''
+
+layout:
+  wxicon:    {horizontal-center: 0.0, top: -0.10, width: 0.55, height: 0.537}
+  wxdesc:    {left: 0.0, top: 0.342, width: 1.0, height: 0.135, font-size: 0.090}
+  temper:    {left: 0.0, top: 0.414, width: 1.0, height: 0.360, font-size: 0.240}
+  # same slot and size CurrentConditions uses for pressure
+  wind:      {left: 0.0, top: 0.644, width: 1.0, height: 0.158, font-size: 0.105}
+  humidity:  {left: 0.0, top: 0.802, width: 1.0, height: 0.142, font-size: 0.105}
+  wdate:     {left: 0.0, top: 0.944, width: 1.0, height: 0.084, font-size: 0.056}
+
+observed-format: '%H:%M'
+icons-folder: icons-lightblue
