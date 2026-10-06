@@ -4,16 +4,15 @@ Displays current condition differently then standard current conditions plugin.
 Wind is more prominent, "feels like" and pressure is removed.
 
 ## Install
-
+```
 cd ~/PiClock3
 
-git clone https://github.com/ShawnPGHPublic/piclock3-currentwind
-plugins/currentwind
-
+git clone https://github.com/ShawnPGHPublic/piclock3-currentwind plugins/CurrentWind
+```
 ## Test
-
+```
 python3 PyQtPiClock3.py examples/currentwind.yaml
-
+```
 ------------------------------------------------------------------------
 
 ### Use it
