@@ -52,7 +52,7 @@ class CurrentWind(Widget):
             '' if temp is None
             else self.units('temperature', 'C', temp))
 
-        self.parts['wind'].setText(self.wind(c, c.get('wind')))
+        self.parts['wind'].setText(self.wind(c, c.get('wind')))        
         self.parts['humidity'].setText(self.humidity(c, temp, dew))
 
         when = c.get('when')
@@ -75,7 +75,12 @@ class CurrentWind(Widget):
         if c.get('wind-dir') is not None:
             s += ' ' + self.units('direction', 'deg', c['wind-dir'])
         if speed is not None:
-            s += ' %.1f' % speed
+            to = self.piclock.units.unit('speed', self.unitSet())
+            n = self.piclock.units.convert('speed', 'kph', to, speed)
+            s += ' %.0f' % n            
         if c.get('gust') is not None:
-            s += ' / %.1f' % self.units('speed', 'kph', c['gust'])
+            to = self.piclock.units.unit('speed', self.unitSet())
+            n = self.piclock.units.convert('speed', 'kph', to, c.get('gust'))
+            s += ' / %.0f' % n            
+            # s += ' / %s' % self.units('speed', 'kph', c['gust'])
         return s
